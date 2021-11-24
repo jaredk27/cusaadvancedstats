@@ -1,8 +1,10 @@
 # This script grabs each C-USA team's advanced stats and puts them into a data frame. It then generates a gt for both offense and defense. Special teams to come!
 #Initial set up
-
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
 install.packages("cfbfastR")
-library("cfbfastR")
+pacman::p_load(tidyverse, cfbfastR, zoo, ggimage, gt)
 
 #Grab each team in C-USA and put them into a df (can use this to loop eventually)
 #cusa_teams <- cfbd_team_info(conference = "CUSA")
